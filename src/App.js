@@ -1,6 +1,6 @@
 import GlobalStyle from './Global'
 import Header from './layouts/Header'
-import { Button, CancelButton } from './elements'
+import { Button } from './elements'
 
 function App() {
   return (
@@ -8,9 +8,9 @@ function App() {
       <Header />
       <GlobalStyle />
       <Button>Hello</Button>
-      <CancelButton>Cancel</CancelButton>
-      <Button size="small">Hello</Button>
-      <CancelButton size="small">Cancel</CancelButton>
+      <Button modifiers="cancel">Cancel</Button>
+      <Button modifiers="small">Hello</Button>
+      <Button modifiers={["small", "cancel"]}>Cancel</Button>
     </div>
   );
 }
