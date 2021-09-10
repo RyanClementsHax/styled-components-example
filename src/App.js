@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components/macro'
 import GlobalStyle from './Global'
 import Header from './layouts/Header'
 import { Button, Card } from './elements'
@@ -23,7 +23,14 @@ function App() {
       <div>
         <Header />
         <GlobalStyle />
-        <main>
+        <main
+          css={`
+            background: red;
+            h2 {
+              font-size: 100px;
+            }
+          `}
+        >
           <ThemeProvider theme={theme2}>
             <Card>
               <h2>Hello from card</h2>
