@@ -1,69 +1,8 @@
 import logo from './logo.svg';
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import GlobalStyle from './Global'
+import { Heading, Button, CancelButton } from './elements';
 
-const size = {
-  small: 400,
-  med: 960,
-  large: 1140
-}
-
-// const above = Object.keys(size).reduce((acc, label) => {
-//   acc[label] = (...args) => css`
-//     @media(min-width: ${size[label]}px) {
-//       ${css(...args)}
-//     }
-//   `
-//   return acc
-// }, {})
-
-const above = Object.keys(size).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media(min-width: ${size[label] / 16}em) {
-      ${css(...args)}
-    }
-  `
-  return acc
-}, {})
-
-const below = Object.keys(size).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media(max-width: ${size[label] / 16}em) {
-      ${css(...args)}
-    }
-  `
-  return acc
-}, {})
-
-// CSS Helper
-const fixedTop = css`
-  position: fixed;
-  top: ${({ top }) => top + 'px'};
-  left: 0;
-`
-
-const Heading = styled.h1`
-  font-size: 2rem;
-  ${above.med`
-    color: blue;
-  `}
-`
-
-const color = "white";
-
-const Button = styled.button`
-  padding: 5px 20px;
-  border-radius: 4px;
-  border: none;
-  color: ${color};
-  font-size: 2rem;
-  background: indigo;
-`;
-
-const CancelButton = styled(Button)`
-  background: tomato;
-  ${fixedTop}
-`;
 
 const AppWrapper = styled.div`
   header {
